@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        // Создаем объект банка
+        Bank bank = new Bank("Лучший Банк");
+        bank.welcomeMessage(); // Приветствие от банка
+
+        // Создаем банковский счет
+        BankAccount account = new BankAccount("123456789", 1000.0, "Сберегательный");
+
+        // Создаем клиента
+        Customer customer = new Customer("001", "Амир Нагизханов", "amir@example.com", account);
+
+        // Вывод информации о клиенте
+        System.out.println("\nИнформация о клиенте:");
+        customer.displayCustomerInfo();
+
+        // Тестируем операции с банковским счетом
+        System.out.println("\nОперации с банковским счетом:");
+        account.checkBalance(); // Проверка баланса
+        account.deposit(500.0); // Пополнение счета
+        account.checkBalance(); // Проверка баланса
+        account.withdraw(300.0); // Снятие средств
+        account.checkBalance(); // Проверка баланса
+        account.withdraw(1500.0); // Попытка снять больше, чем доступно
+        account.checkBalance(); // Проверка баланса
+    }
+}
