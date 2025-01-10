@@ -1,0 +1,46 @@
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    private String accountType;
+
+    // Конструктор
+    public BankAccount(String accountNumber, double balance, String accountType) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.accountType = accountType;
+    }
+
+    // Метод для пополнения счета
+    public void deposit(double amount) {
+        if (amount > 0) {
+            this.balance += amount;
+            System.out.println("Счет пополнен на сумму: " + amount);
+        } else {
+            System.out.println("Сумма должна быть положительной!");
+        }
+    }
+
+    // Метод для снятия денег
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            this.balance -= amount;
+            System.out.println("Снято со счета: " + amount);
+        } else {
+            System.out.println("Недостаточно средств или неверная сумма!");
+        }
+    }
+
+    // Метод для проверки баланса
+    public void checkBalance() {
+        System.out.println("Текущий баланс счета: " + balance);
+    }
+
+    // Геттеры
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public String getAccountType() {
+        return accountType;
+    }
+}
