@@ -1,0 +1,13 @@
+public class Bank {
+    private String name;
+
+    // Конструктор
+    public Bank(String name) {
+        this.name = name;
+    }
+
+    // Метод приветствия
+    public void welcomeMessage() {
+        System.out.println("Добро пожаловать в банк: " + name);
+    }
+}
